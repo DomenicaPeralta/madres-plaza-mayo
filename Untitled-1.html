@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Madres de Plaza de Mayo | Memoria Histórica</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* HEADER */
+header {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("./imagenes/fondo_menu.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 46px;
+    margin-bottom: 15px;
+}
+
+header p {
+    max-width: 900px;
+    font-size: 18px;
+}
+
+/* MENÚ */
+nav {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+nav button {
+    background: #ffd166;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* MODALES */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.modal-content {
+    background: white;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.close {
+    float: right;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+h2 {
+    color: #203a43;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #203a43;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Las Madres de Plaza de Mayo</h1>
+    <p>
+        Movimiento emblemático de lucha por los derechos humanos surgido durante la
+        última dictadura militar argentina (1976–1983), clave en la construcción de
+        la memoria colectiva en América Latina.
+    </p>
+
+    <nav>
+        <button onclick="abrir('historia')">Contexto histórico</button>
+        <button onclick="abrir('madres')">Las Madres</button>
+        <button onclick="abrir('lucha')">Lucha y resistencia</button>
+        <button onclick="abrir('memoria')">Memoria colectiva</button>
+        <button onclick="abrir('reflexion')">Reflexión</button>
+        <button onclick="abrir('bibliografia')">Bibliografía</button>
+    </nav>
+</header>
+
+<!-- CONTEXTO HISTÓRICO -->
+<div id="historia" class="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrar('historia')">&times;</span>
+<h2>Contexto histórico</h2>
+<img src="./imagenes/junta_militar.jpg">
+
+<p>
+Entre 1976 y 1983, Argentina estuvo gobernada por una dictadura militar que se instauró
+tras un golpe de Estado. El régimen, denominado “Proceso de Reorganización Nacional”,
+disolvió el Congreso, suspendió los derechos constitucionales y estableció un sistema
+de censura y control social.
+</p>
+
+<p>
+Durante este período, el Estado implementó un plan sistemático de represión ilegal
+dirigido contra personas consideradas opositoras políticas. Estudiantes, trabajadores,
+sindicalistas, militantes sociales e incluso ciudadanos sin militancia fueron víctimas
+de secuestros, torturas y asesinatos.
+</p>
+
+<p>
+Uno de los mecanismos más crueles fue la desaparición forzada de personas. Las víctimas
+eran secuestradas y llevadas a centros clandestinos de detención, donde muchas de ellas
+fueron asesinadas sin que se informara a sus familias sobre su destino.
+</p>
+
+<p>
+Este terrorismo de Estado buscó generar miedo y silencio en la sociedad. Sin embargo,
+frente a este contexto de violencia, surgieron movimientos de resistencia que se
+negaron a aceptar la injusticia y el olvido.
+</p>
+</div>
+</div>
+
+<!-- MADRES -->
+<div id="madres" class="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrar('madres')">&times;</span>
+<h2>Las Madres de Plaza de Mayo</h2>
+<img src="./imagenes/madres_plaza.jpg">
+
+<p>
+Las Madres de Plaza de Mayo surgieron en 1977 cuando un grupo de mujeres comenzó a
+reunirse para exigir información sobre el paradero de sus hijos desaparecidos. Ante
+la falta de respuestas del Estado, decidieron organizarse y llevar su reclamo al
+espacio público.
+</p>
+
+<p>
+Comenzaron a reunirse todos los jueves en la Plaza de Mayo, frente a la Casa Rosada.
+Debido a la prohibición de reunirse en grupos, caminaban en círculos alrededor de la
+plaza, dando origen a una forma de protesta pacífica que continúa hasta hoy.
+</p>
+
+<p>
+El pañuelo blanco que llevan en la cabeza se convirtió en su símbolo más reconocido.
+Originalmente representaba los pañales de tela de sus hijos, y con el tiempo pasó a
+simbolizar la memoria, la maternidad y la resistencia.
+</p>
+
+<p>
+A pesar de la persecución, las amenazas y la desaparición de algunas de sus integrantes,
+las Madres nunca abandonaron su lucha. Su accionar fue fundamental para denunciar los
+crímenes de la dictadura a nivel internacional.
+</p>
+</div>
+</div>
+
+<!-- LUCHA -->
+<div id="lucha" class="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrar('lucha')">&times;</span>
+<h2>Lucha y resistencia</h2>
+<img src="./imagenes/panuelos_plaza.jpg">
+
+<p>
+La lucha de las Madres de Plaza de Mayo se caracterizó por su carácter pacífico y
+persistente. Transformaron el dolor individual en una acción colectiva que rompió
+el silencio impuesto por la dictadura.
+</p>
+
+<p>
+Sus marchas semanales se convirtieron en un símbolo internacional de resistencia
+civil. A través de su constancia, lograron visibilizar las violaciones a los derechos
+humanos y generar presión internacional contra el régimen militar.
+</p>
+
+<p>
+Incluso después del retorno de la democracia, continuaron exigiendo verdad y justicia,
+rechazando las leyes de impunidad y defendiendo la memoria histórica.
+</p>
+</div>
+</div>
+
+<!-- MEMORIA -->
+<div id="memoria" class="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrar('memoria')">&times;</span>
+<h2>Memoria colectiva</h2>
+<img src="./imagenes/verdad_justicia.jpg">
+
+<p>
+La memoria colectiva cumple un rol fundamental en la construcción de sociedades
+democráticas. Permite reconocer el pasado, reflexionar sobre sus consecuencias y
+evitar la repetición de hechos de violencia.
+</p>
+
+<p>
+Las Madres de Plaza de Mayo fueron protagonistas centrales en este proceso, al
+mantener vivos los reclamos de memoria, verdad y justicia en la sociedad argentina
+y latinoamericana.
+</p>
+
+<p>
+Recordar no significa quedarse en el pasado, sino aprender de él para construir un
+futuro más justo y respetuoso de los derechos humanos.
+</p>
+</div>
+</div>
+
+<!-- REFLEXIÓN -->
+<div id="reflexion" class="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrar('reflexion')">&times;</span>
+<h2>Reflexión crítica del grupo</h2>
+
+<p>
+La lucha de las Madres de Plaza de Mayo representa uno
+de los ejemplos más importantes de resistencia pacífica en América Latina. Su
+capacidad de transformar el dolor en acción colectiva demuestra el poder de la
+organización social.
+</p>
+
+<p>
+Este movimiento nos invita a reflexionar sobre nuestro rol como ciudadanos y
+estudiantes, y sobre la importancia de no permanecer indiferentes frente a las
+violaciones de derechos humanos.
+</p>
+
+<p>
+Creemos que la memoria histórica es una responsabilidad colectiva que contribuye a
+la construcción de una sociedad más justa y democrática.
+</p>
+</div>
+</div>
+
+
+<div id="bibliografia" class="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrar('bibliografia')">&times;</span>
+<h2>Bibliografía</h2>
+<ul>
+<li>CONADEP. (1984). <i>Nunca más</i>. Buenos Aires: EUDEBA.</li>
+<li>Jelin, E. (2002). <i>Los trabajos de la memoria</i>. Madrid: Siglo XXI.</li>
+<li>Madres de Plaza de Mayo. (s.f.). <i>Historia y lucha</i>. https://www.madres.org</li>
+<li>Ministerio de Justicia y Derechos Humanos. (s.f.). <i>Memoria, verdad y justicia</i>. Argentina.</li>
+</ul>
+</div>
+</div>
+
+<footer>
+Memoria histórica y derechos humanos
+</footer>
+
+<script>
+function abrir(id) {
+    document.getElementById(id).style.display = "block";
+}
+function cerrar(id) {
+    document.getElementById(id).style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
